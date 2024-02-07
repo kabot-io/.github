@@ -1,7 +1,7 @@
 name: 🐞 Bug
 description: Report a new bug
 title: 
-placeholder: ...
+  placeholder: ...
 labels: ["bug"]
 projects: ["kabot-io/2"]
 body:
