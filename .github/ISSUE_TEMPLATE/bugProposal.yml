@@ -1,7 +1,8 @@
 name: 🐞 Bug
 description: Report a new bug
 title: 
-  placeholder: ...
+  - type: textarea
+    placeholder: ...
 labels: ["bug"]
 projects: ["kabot-io/2"]
 body:
