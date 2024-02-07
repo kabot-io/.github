@@ -1,7 +1,7 @@
 name: 🛠️ Task
 description: Create a new task 
 title: "🛠️  "
-labels: [ ]
+labels: ["task"]
 projects: ["kabot-io/2"]
 body:
   - type: markdown
