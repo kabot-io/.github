@@ -1,6 +1,6 @@
-name: Task
+name: 🛠️ Task
 description: Create a new task 
-title: "[Task]: "
+title: "🛠️: "
 labels: [ ]
 projects: ["kabot-io/2"]
 body:
