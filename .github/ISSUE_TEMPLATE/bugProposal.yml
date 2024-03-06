@@ -1,4 +1,4 @@
-name: new Bug
+name: Bug
 description: Report a new bug
 labels: ["bug"]
 projects: ["kabot-io/2"]
