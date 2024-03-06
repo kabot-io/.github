@@ -1,6 +1,6 @@
-name:
+name: Bug
 description: Report a new bug
-title: "🐞  "
+title: ""
 labels: ["bug"]
 projects: ["kabot-io/2"]
 body:
