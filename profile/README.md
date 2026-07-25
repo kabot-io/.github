@@ -18,7 +18,7 @@ The Kabot robot is a hardware and software solution that aims to lower the entry
 
 ## Hardware - [Electronics and Mechanics](github.com/kabot-io/kabot-hardware/) <a name="hardware"></a>
 
-[link to repo]((github.com/kabot-io/kabot-hardware/))
+[link to repo](https://github.com/kabot-io/kabot-hardware/)
 
 Currently, the robot hardware is at its second revision, packed with cost-effective features, in contrary to the first version, which was completely bare-bones. The mechanical parts are designed using [FreeCAD](https://www.freecad.org/) and 3D printed with some little exceptions, which were not viable to print due to the low cost of China-sourced parts, such as wheels. The electronics has been designed using [KiCad](https://www.kicad.org/) and consist of few distinct sections (however, on a single PCB).
 
@@ -70,7 +70,7 @@ The board also supplies a bunch of addresable RGB LEDs.
 
 ### Human Machine Interface  <a name="human-machine-interface"></a>
 
-[link to repo]((github.com/kabot-io/kabot-hmi/))
+[link to repo](https://github.com/kabot-io/kabot-hmi/)
 
 To make the robot algorithms writing as simple and comfortable as possible, a Human-Machine-Interface has been developed. The HMI is kept to be as welcoming as possible, similar to the Arduino IDE - only the necessary stuff is exposed to the user, and it is exposed in as readable and simple as possible manner. The HMI connectos to the robot and acts as a sensor values plotter and robot controller. User writes Python code, which is then executed on the PC, fed the sensor readings, end outputs motor controls to the robot. The built-in code editor has syntax highlighting and displays runtime errors and exceptions next to the code line. The HMI also allows for Over-the-Air firmware updates of the robot firmware.
 
@@ -82,7 +82,7 @@ To make the robot algorithms writing as simple and comfortable as possible, a Hu
 
 ### Firmware  <a name="firmware"></a>
 
-[link to repo]((github.com/kabot-io/kabot-zephyr/))
+[link to repo](https://github.com/kabot-io/kabot-zephyr/)
 
 Firmware of the robot is based on the [Zephyr Real Time Operating System](https://www.zephyrproject.org/). The main purpose of the firmware is to get the sensor readings, send them to the PC and act based on the control messages from this PC. Beyond that, the firmware also allows for discovery of the robots connected to the same network, blinking lights and exposes Zephyr shell over Serial over USB connection, that allows for tinkering with the firmware on the lower level (and providing wifi credentials).  
 
