@@ -2,13 +2,25 @@
 
 The Kabot robot is a hardware and software solution that aims to lower the entry barrier to mobile robotics. The concept is based around simple network-enabled embedded platform (i.e. ESP32-S3) with firmware based on Zehyr RTOS, which has sensors and actuators connected to it, and sends `State` and receives `Control` messages from much beefier processing unit - the computer. This split allows the hardware to be small and cost effective, while the hardware that has the processing power for more advanced algorithms is already available for the person willing to dive into the world of robotics.
 
-## Hardware - [Electronics and Mechanics](github.com/kabot-io/kabot-hardware/)
+## Table of Contents
+
+1. [Hardware](#hardware)
+    - [Processing section](#processing-section)
+    - [Power section](#power-section)
+    - [Sensors section](#sensors-section)
+2. [Software](#software)
+    - [Human Machine Interface](#human-machine-interface)
+    - [Firmware](#firmware)
+
+## Hardware - [Electronics and Mechanics](github.com/kabot-io/kabot-hardware/) <a name="hardware"></a>
+
+[link to repo]((github.com/kabot-io/kabot-hardware/))
 
 Currently, the robot hardware is at its second revision, packed with cost-effective features, in contrary to the first version, which was completely bare-bones. The mechanical parts are designed using [FreeCAD](https://www.freecad.org/) and 3D printed with some little exceptions, which were not viable to print due to the low cost of China-sourced parts, such as wheels. The electronics has been designed using [KiCad](https://www.kicad.org/) and consist of few distinct sections (however, on a single PCB).
 
 ![Kabot FreeCAD Render](https://github.com/kabot-io/kabot-hardware/raw/main/img/header-image.png)
 
-### Processing section
+### Processing section  <a name="processing-section"></a>
 Based on the [ESP32-S3-N16R8 MCU on Wroom-1 module](https://documentation.espressif.com/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf), which is responsible for communication with the PC, fetching data from the sensors, and executing control messages - driving the motors.
 
 ![Processing Section](processing-section.png)
@@ -21,7 +33,7 @@ There is also onboard USB HUB ([CH334F](https://cdn-learn.adafruit.com/assets/as
 
 ![USB Peripherals](usb-peripherals.png)
 
-### Power section
+### Power section  <a name="power-section"></a>
 The USB-C connector that is used to program the robot, is also used to charge the robot built-in battery, which is a single Lithium-Ion 18650 sized cell. The same chip is also responsible for stepping the battery voltage up to 5V, which is then fed to the motor drivers to have somehat stable motor power supply, and stabilized to 3.3V for the MCU. The chip is the thing used in powerbanks - [INJOINIC IP5306](https://www.lcsc.com/datasheet/C181692.pdf).
 
 ![Powerbank](powerbank.png)
@@ -33,7 +45,7 @@ Motors are driven by two [DRV8837](https://www.ti.com/lit/ds/symlink/drv8838.pdf
 ![Current sensor](current-sensor.png)
 
 ![Motor driver](motor-driver.png)
-### Sensors section
+### Sensors section  <a name="sensors-section"></a>
 
 Besides the current sensors and encoders, robot has a bunch of on-board sensors:
 - 6 Degrees of Freedon Inertial Measurement Unit: [TDK ICM-42670-L](https://datasheet.lcsc.com/datasheet/pdf/874d19cb3cf7cf4a72e58391bfc479df.pdf)
@@ -50,9 +62,11 @@ The board also supplies a bunch of addresable RGB LEDs.
 
 ![LEDs](leds.png)
 
-## Software - [Human Machine Interface](https://github.com/kabot-io/kabot-hmi) and [Firmware](https://github.com/kabot-io/kabot-zephyr)
+## Software - [Human Machine Interface](https://github.com/kabot-io/kabot-hmi) and [Firmware](https://github.com/kabot-io/kabot-zephyr)  <a name="software"></a>
 
-### Human Machine Interface
+### Human Machine Interface  <a name="human-machine-interface"></a>
+
+[link to repo]((github.com/kabot-io/kabot-hmi/))
 
 To make the robot algorithms writing as simple and comfortable as possible, a Human-Machine-Interface has been developed. The HMI is kept to be as welcoming as possible, similar to the Arduino IDE - only the necessary stuff is exposed to the user, and it is exposed in as readable and simple as possible manner. The HMI connectos to the robot and acts as a sensor values plotter and robot controller. User writes Python code, which is then executed on the PC, fed the sensor readings, end outputs motor controls to the robot. The built-in code editor has syntax highlighting and displays runtime errors and exceptions next to the code line. The HMI also allows for Over-the-Air firmware updates of the robot firmware.
 
@@ -62,7 +76,9 @@ To make the robot algorithms writing as simple and comfortable as possible, a Hu
 ![HMI Plot View](https://github.com/kabot-io/kabot-hmi/raw/main/docs/img/plot-view.png)
 
 
-### Firmware
+### Firmware  <a name="firmware"></a>
+
+[link to repo]((github.com/kabot-io/kabot-zephyr/))
 
 Firmware of the robot is based on the [Zephyr Real Time Operating System](https://www.zephyrproject.org/). The main purpose of the firmware is to get the sensor readings, send them to the PC and act based on the control messages from this PC. Beyond that, the firmware also allows for discovery of the robots connected to the same network, blinking lights and exposes Zephyr shell over Serial over USB connection, that allows for tinkering with the firmware on the lower level (and providing wifi credentials).  
 
