@@ -2,6 +2,8 @@
 
 The Kabot robot is a hardware and software solution that aims to lower the entry barrier to mobile robotics. The concept is based around simple network-enabled embedded platform (i.e. ESP32-S3) with firmware based on Zehyr RTOS, which has sensors and actuators connected to it, and sends `State` and receives `Control` messages from much beefier processing unit - the computer. This split allows the hardware to be small and cost effective, while the hardware that has the processing power for more advanced algorithms is already available for the person willing to dive into the world of robotics.
 
+![Kabot Robots](kabot-robots.jpg)
+
 ## Table of Contents
 
 1. [Hardware](#hardware)
